@@ -1,0 +1,78 @@
+@startuml
+
+'====================
+' Element classes
+'====================
+
+class Bus {
+    +name: str
+    +v: float
+    +set_bus_v(bus_v: float): void
+}
+
+class Resistor {
+    +name: str
+    +bus1: str
+    +bus2: str
+    +r: float
+    +g: float
+    +calc_g(): float
+}
+
+class Load {
+    +name: str
+    +bus1: str
+    +p: float
+    +v: float
+    +r: float
+    +g: float
+    +calc_g(): float
+}
+
+class Vsource {
+    +name: str
+    +bus1: str
+    +v: float
+}
+
+'====================
+' Circuit
+'====================
+
+class Circuit {
+    +name: str
+    +buses: Dict[str, Bus]
+    +resistors: Dict[str, Resistor]
+    +loads: Dict[str, Load]
+    +vsource: Vsource
+    +i: float
+
+    +add_bus(bus: str)
+    +add_resistor_element(name, bus1, bus2, r)
+    +add_load_element(name, bus1, p, v)
+    +add_vsource_element(name, bus1, v)
+    +set_i(i: float)
+    +print_nodal_voltage()
+    +print_circuit_current()
+}
+
+'====================
+' Solution
+'====================
+
+class Solution {
+    +circuit: Circuit
+    +do_power_flow()
+}
+
+'====================
+' Relationships
+'====================
+
+Circuit --> Bus
+Circuit --> Resistor
+Circuit --> Load
+Circuit --> Vsource
+Solution --> Circuit
+
+@enduml
