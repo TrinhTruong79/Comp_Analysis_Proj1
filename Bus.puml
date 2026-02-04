@@ -1,0 +1,9 @@
+@startuml
+
+class Bus {
+    +name: str
+    +v: float
+    +set_bus_v(bus_v: float): void
+}
+
+@enduml

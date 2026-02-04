@@ -1,0 +1,8 @@
+@startuml
+
+class Solution {
+    +circuit: Circuit
+    +do_power_flow(): void
+}
+
+@enduml

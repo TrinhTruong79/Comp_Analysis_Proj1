@@ -11,14 +11,14 @@ def main():
     circuit.add_bus(("b"))
 
     # b. Voltage source Va connected at bus A with 100 V
-    circuit.add_vsource_element("va", "a", 100.0)
+    circuit.add_vsource_element("va", "a", 240.0)
 
     # c. Resistor Rab connected between buses A and B with 5 Ohms
-    circuit.add_resistor_element("rab", "a", "b", 5.0)
+    circuit.add_resistor_element("rab", "a", "b", 10.0)
 
     # d. Load Lb connected to bus B
     #    Power = 2000 W, nominal voltage = 100 V
-    circuit.add_load_element("lb", "b", 2000.0, 100.0)
+    circuit.add_load_element("lb", "b", 2400.0, 240.0)
 
     # 2. Create solution object and simulate the circuit
     solution = Solution(circuit)

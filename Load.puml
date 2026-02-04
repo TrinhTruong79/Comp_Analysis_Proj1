@@ -1,0 +1,13 @@
+@startuml
+
+class Load {
+    +name: str
+    +bus1: str
+    +p: float
+    +v: float
+    +r: float
+    +g: float
+    +calc_g(): float
+}
+
+@enduml

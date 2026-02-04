@@ -1,0 +1,9 @@
+@startuml
+
+class Vsource {
+    +name: str
+    +bus1: str
+    +v: float
+}
+
+@enduml

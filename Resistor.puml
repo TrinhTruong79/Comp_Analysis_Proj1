@@ -1,0 +1,12 @@
+@startuml
+
+class Resistor {
+    +name: str
+    +bus1: str
+    +bus2: str
+    +r: float
+    +g: float
+    +calc_g(): float
+}
+
+@enduml

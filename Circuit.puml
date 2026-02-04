@@ -1,0 +1,20 @@
+@startuml
+
+class Circuit {
+    +name: str
+    +buses: Dict[str, Bus]
+    +resistors: Dict[str, Resistor]
+    +loads: Dict[str, Load]
+    +vsource: Vsource
+    +i: float
+
+    +add_bus(bus: str)
+    +add_resistor_element(name, bus1, bus2, r)
+    +add_load_element(name, bus1, p, v)
+    +add_vsource_element(name, bus1, v)
+    +set_i(i: float)
+    +print_nodal_voltage()
+    +print_circuit_current()
+}
+
+@enduml
